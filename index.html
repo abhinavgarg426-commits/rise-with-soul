@@ -4,120 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neha Sharma | Career & Life Coach — Vasant Kunj, Delhi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #faf9f7; color: #1c1c1c; overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'Lora', serif; }
-        :root { --plum: #7b4b6a; }
+        body { font-family: 'Inter', sans-serif; background: #faf8ff; color: #1a1a1a; overflow-x: hidden; }
+        h1,h2,h3 { font-family: 'Cormorant Garamond', serif; }
+        :root { --purple: #6b4fa2; --purple-light: #f0ecff; }
 
-        nav { position: fixed; top: 0; width: 100%; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; transition: 0.4s; }
-        nav.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); box-shadow: 0 1px 20px rgba(0,0,0,0.06); padding: 0.8rem 5%; }
-        .logo { font-family: 'Lora', serif; font-size: 1.3rem; color: var(--plum); font-weight: 600; }
-        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
-        .nav-links a { color: #555; text-decoration: none; font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: var(--plum); }
-        .cta-btn { background: var(--plum); color: #fff; padding: 0.7rem 1.5rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; }
-        .cta-btn:hover { background: #624458; }
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(250,248,255,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(107,79,162,0.08); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0.85rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--purple); text-decoration: none; font-weight: 600; }
+        .logo span { color: #b89fd4; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: #666; text-decoration: none; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--purple); }
+        .nav-cta { background: var(--purple); color: #fff; padding: 0.6rem 1.3rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 1px; transition: 0.3s; }
+        .nav-cta:hover { background: #543d82; }
 
-        .hero { min-height: 100vh; display: flex; }
-        .hero-left { flex: 0.8; background: var(--plum); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-        .hero-left .bg-pattern { position: absolute; inset: 0; opacity: 0.05; background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 30px 30px; }
-        .hero-left .content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
-        .hero-left .avatar { width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
-        .hero-left .avatar i { color: rgba(255,255,255,0.5); font-size: 3rem; }
-        .hero-left h2 { color: #fff; font-size: 2rem; line-height: 1.3; margin-bottom: 0.8rem; }
-        .hero-left p { color: rgba(255,255,255,0.55); font-size: 0.85rem; font-weight: 300; max-width: 280px; margin: 0 auto 2rem; }
-        .hero-left .certs { display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
-        .hero-left .cert { background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; color: rgba(255,255,255,0.8); font-size: 0.72rem; letter-spacing: 1px; }
-        .hero-right { flex: 1.2; display: flex; flex-direction: column; justify-content: center; padding: 8rem 7% 4rem 5%; }
-        .hero-tag { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--plum); margin-bottom: 1.2rem; }
-        .hero h1 { font-size: 2.8rem; line-height: 1.15; margin-bottom: 1.5rem; }
-        .hero h1 em { color: var(--plum); font-style: italic; }
-        .hero p { color: #666; font-size: 0.95rem; line-height: 1.85; max-width: 480px; margin-bottom: 2rem; font-weight: 300; }
-        .hero-btns { display: flex; gap: 1rem; margin-bottom: 3rem; }
-        .btn-plum { background: var(--plum); color: #fff; padding: 1rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; display: inline-block; }
-        .btn-plum:hover { background: #624458; transform: translateY(-2px); }
-        .btn-ghost { background: transparent; color: #1c1c1c; padding: 1rem 2rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid #ccc; transition: 0.3s; display: inline-block; }
-        .btn-ghost:hover { border-color: var(--plum); color: var(--plum); }
+        /* FIXED: Hero uses full-bleed bg image, no blocking placeholder */
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1800&q=85'); background-size: cover; background-position: center; }
+        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(250,248,255,0.95) 0%, rgba(250,248,255,0.85) 45%, rgba(250,248,255,0.1) 100%); }
+        .hero-content { position: relative; z-index: 2; width: 100%; max-width: 1200px; margin: 0 auto; padding: 7rem 3rem 4rem; display: flex; justify-content: space-between; align-items: center; gap: 3rem; }
+        .hero-text { max-width: 520px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--purple); font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
+        .hero h1 { font-size: 3rem; line-height: 1.15; margin-bottom: 1.2rem; color: #1a1a1a; }
+        .hero h1 em { color: var(--purple); font-style: italic; }
+        .hero p { color: #555; font-size: 0.9rem; line-height: 1.85; margin-bottom: 2rem; font-weight: 300; }
+        .hero-btns { display: flex; gap: 1rem; }
+        .btn-purple { background: var(--purple); color: #fff; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; transition: 0.3s; display: inline-block; }
+        .btn-purple:hover { background: #543d82; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(107,79,162,0.25); }
+        .btn-outline { border: 1.5px solid #ccc; color: #1a1a1a; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; display: inline-block; }
+        .btn-outline:hover { border-color: var(--purple); color: var(--purple); }
+        .hero-right { position: relative; z-index: 2; flex-shrink: 0; }
+        .hero-right img { width: 340px; height: 420px; object-fit: cover; display: block; }
+        .hero-right .floating { position: absolute; bottom: 1.5rem; left: -1.5rem; background: #fff; padding: 1rem 1.3rem; box-shadow: 0 8px 30px rgba(107,79,162,0.12); }
+        .hero-right .floating .rating { color: var(--purple); font-weight: 700; font-size: 1rem; }
+        .hero-right .floating span { font-size: 0.72rem; color: #888; display: block; margin-top: 0.2rem; }
 
-        .marquee { background: #1c1c1c; padding: 0.8rem 0; overflow: hidden; }
-        .marquee-content { display: inline-block; animation: marquee 20s linear infinite; white-space: nowrap; }
-        .marquee-content span { color: rgba(255,255,255,0.35); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin: 0 2rem; }
-        @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+        .strip { background: var(--purple); padding: 0.7rem 2rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .strip-item { color: rgba(255,255,255,0.9); font-size: 0.72rem; letter-spacing: 0.5px; }
 
-        .intro { padding: 6rem 5%; display: flex; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto; }
-        .intro-text { flex: 1; }
-        .intro-text .tag { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--plum); margin-bottom: 1rem; }
-        .intro-text h2 { font-size: 2.2rem; margin-bottom: 1.5rem; line-height: 1.2; }
-        .intro-text p { color: #666; font-size: 0.92rem; line-height: 1.85; margin-bottom: 1rem; font-weight: 300; }
-        .intro-right { flex: 0.8; display: flex; flex-direction: column; gap: 1.5rem; }
-        .stat-row { display: flex; gap: 2rem; }
-        .stat-item { flex: 1; }
-        .stat-item .num { font-family: 'Lora', serif; font-size: 2.2rem; color: var(--plum); font-weight: 600; }
-        .stat-item .label { font-size: 0.72rem; color: #999; text-transform: uppercase; letter-spacing: 1px; }
-
-        .programs { padding: 6rem 5%; }
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-label { font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--plum); margin-bottom: 0.5rem; }
-        .section-title { font-family: 'Lora', serif; font-size: 2.5rem; margin: 0.5rem 0; }
-        .section-sub { color: #999; font-size: 0.9rem; }
+        .programs { padding: 6rem 2rem; }
+        .programs .header { max-width: 1200px; margin: 0 auto 3rem; text-align: center; }
+        .programs .label { color: var(--purple); font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; }
+        .programs h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin: 0.5rem 0; }
+        .programs .sub { color: #888; font-size: 0.88rem; }
         .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-        .program-card { background: #fff; padding: 2.5rem 2rem; border: 1px solid #eee; transition: 0.3s; }
-        .program-card:hover { border-color: var(--plum); box-shadow: 0 8px 40px rgba(123,75,106,0.08); transform: translateY(-3px); }
-        .program-card .number { font-family: 'Lora', serif; font-size: 3rem; color: rgba(123,75,106,0.1); font-weight: 600; margin-bottom: 1rem; }
-        .program-card h3 { font-family: 'Lora', serif; font-size: 1.3rem; margin-bottom: 0.8rem; }
-        .program-card p { font-size: 0.85rem; color: #777; line-height: 1.7; margin-bottom: 1.2rem; }
-        .program-card .detail { font-size: 0.78rem; color: var(--plum); font-weight: 500; }
-        .program-card .detail i { margin-right: 0.5rem; }
+        .program-card { background: #fff; border: 1px solid #eee; padding: 2rem; transition: 0.3s; }
+        .program-card:hover { border-color: var(--purple); box-shadow: 0 8px 40px rgba(107,79,162,0.08); transform: translateY(-3px); }
+        .program-card .duration { color: var(--purple); font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600; }
+        .program-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .program-card p { color: #777; font-size: 0.82rem; line-height: 1.65; margin-bottom: 1rem; }
+        .program-card .includes { font-size: 0.75rem; color: #999; line-height: 1.7; margin-bottom: 1.2rem; }
+        .program-card .includes strong { color: #333; }
+        .program-card .price { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--purple); }
+        .program-card .price small { font-size: 0.7rem; color: #aaa; font-family: 'Inter', sans-serif; margin-left: 0.3rem; }
 
-        .story { padding: 6rem 8%; display: flex; gap: 5rem; align-items: center; background: #fff; }
-        .story-right { flex: 1; }
-        .story-right .tag { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--plum); margin-bottom: 1rem; }
-        .story-right h2 { font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
-        .story-right p { color: #666; font-size: 0.92rem; line-height: 1.85; margin-bottom: 1rem; font-weight: 300; }
-        .story-right .quote { border-left: 3px solid var(--plum); padding-left: 1.5rem; font-family: 'Lora', serif; font-style: italic; font-size: 1.1rem; color: #333; margin: 2rem 0; }
-        .story-left { flex: 0.7; }
-        .story-left .quote-img { width: 100%; aspect-ratio: 4/5; background: linear-gradient(135deg, #f5f0f3, #e8dce5); display: flex; align-items: center; justify-content: center; border-radius: 2px; }
-        .story-left .quote-img i { color: rgba(123,75,106,0.25); font-size: 5rem; }
+        .about-section { padding: 6rem 2rem; display: flex; gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
+        .about-left { flex: 1; min-width: 280px; }
+        .about-left img { width: 100%; height: 380px; object-fit: cover; display: block; }
+        .about-right { flex: 1; min-width: 280px; }
+        .about-right .label { color: var(--purple); font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem; }
+        .about-right h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-bottom: 1.2rem; line-height: 1.2; }
+        .about-right p { color: #555; font-size: 0.88rem; line-height: 1.85; margin-bottom: 0.9rem; font-weight: 300; }
+        .about-right .quote { border-left: 3px solid var(--purple); padding-left: 1.2rem; margin: 1.5rem 0; }
+        .about-right .quote p { color: #333; font-style: italic; margin-bottom: 0; }
 
-        .testimonials { padding: 6rem 5%; background: #1c1c1c; color: #fff; }
-        .testimonials .section-label { color: #c49bb5; }
-        .testimonials .section-title { color: #fff; }
-        .testimonials .section-sub { color: rgba(255,255,255,0.4); }
-        .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto; }
-        .testi-card { background: rgba(255,255,255,0.04); padding: 2rem; border: 1px solid rgba(255,255,255,0.07); }
-        .testi-card .quote { color: #c49bb5; font-size: 1.5rem; margin-bottom: 1rem; }
-        .testi-card p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; }
-        .testi-card h4 { font-size: 0.85rem; font-weight: 500; }
+        .video-section { padding: 6rem 2rem; background: var(--purple-light); text-align: center; }
+        .video-section .label { color: var(--purple); font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .video-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 2rem; }
+        .video-section iframe { width: 100%; max-width: 800px; height: 450px; border: none; border-radius: 4px; }
+
+        .testimonials { padding: 6rem 2rem; position: relative; overflow: hidden; }
+        .testi-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=1600&q=80'); background-size: cover; background-position: center; }
+        .testi-bg::after { content: ''; position: absolute; inset: 0; background: rgba(107,79,162,0.93); }
+        .testimonials .content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+        .testimonials .label { color: rgba(255,255,255,0.5); font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; }
+        .testimonials h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin: 0.5rem 0 3rem; color: #fff; }
+        .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .testi-card { background: rgba(255,255,255,0.07); padding: 2rem; border: 1px solid rgba(255,255,255,0.1); }
+        .testi-card .quote { color: #c4a8e8; font-size: 1.4rem; margin-bottom: 1rem; }
+        .testi-card p { color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.8; font-style: italic; margin-bottom: 1.3rem; }
+        .testi-card h4 { font-size: 0.88rem; }
         .testi-card span { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
 
-        .process { padding: 6rem 5%; }
-        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 1000px; margin: 0 auto; }
-        .process-step { text-align: center; padding: 2rem 1rem; }
-        .process-step .step-num { width: 48px; height: 48px; border-radius: 50%; background: rgba(123,75,106,0.1); color: var(--plum); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; }
-        .process-step h3 { font-family: 'Lora', serif; font-size: 1rem; margin-bottom: 0.5rem; }
-        .process-step p { font-size: 0.82rem; color: #888; line-height: 1.6; }
-        .process-step .arrow { position: absolute; right: -1rem; top: 50%; transform: translateY(-50%); color: rgba(123,75,106,0.2); font-size: 1.5rem; }
-        .process-step { position: relative; }
+        .contact-section { padding: 6rem 2rem; text-align: center; }
+        .contact-section .label { color: var(--purple); font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; }
+        .contact-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin: 0.5rem 0 1rem; }
+        .contact-section p { color: #888; font-size: 0.88rem; margin-bottom: 2.5rem; max-width: 400px; margin-left: auto; margin-right: auto; }
+        .contact-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .contact-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: 0.3s; }
+        .contact-btn.primary { background: var(--purple); color: #fff; }
+        .contact-btn.primary:hover { background: #543d82; }
+        .contact-btn.secondary { border: 1.5px solid #ddd; color: #1a1a1a; }
+        .contact-btn.secondary:hover { border-color: var(--purple); color: var(--purple); }
 
-        .cta-section { padding: 6rem 5%; text-align: center; background: linear-gradient(135deg, #f5f0f3, #faf9f7); }
-        .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .cta-section p { color: #888; max-width: 480px; margin: 0 auto 2.5rem; font-size: 0.95rem; }
-        .cta-section .cta-btn { font-size: 0.8rem; padding: 1.1rem 3rem; }
-
-        footer { background: #0d0d0d; color: #fff; padding: 4rem 5% 2rem; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-        .footer-brand .logo { font-family: 'Lora', serif; font-size: 1.3rem; color: var(--plum); margin-bottom: 1rem; }
-        .footer-brand p { color: #555; font-size: 0.85rem; line-height: 1.8; margin-bottom: 1.5rem; }
-        .footer-brand .social a { color: #666; margin-right: 1rem; text-decoration: none; transition: 0.3s; }
-        .footer-brand .social a:hover { color: var(--plum); }
-        .footer-col h4 { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--plum); margin-bottom: 1rem; }
-        .footer-col a { display: block; color: #555; text-decoration: none; font-size: 0.85rem; margin-bottom: 0.6rem; transition: 0.3s; }
-        .footer-col a:hover { color: var(--plum); }
-        .footer-bottom { border-top: 1px solid #1a1a1a; padding-top: 2rem; text-align: center; }
-        .footer-bottom p { font-size: 0.72rem; color: #333; }
+        footer { background: #1a0f2e; color: #fff; padding: 4rem 2rem 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto 3rem; }
+        .footer-brand .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #c4a8e8; margin-bottom: 1rem; }
+        .footer-brand p { color: #555; font-size: 0.82rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .footer-col h4 { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: #c4a8e8; margin-bottom: 1rem; }
+        .footer-col a { display: block; color: #555; text-decoration: none; font-size: 0.82rem; margin-bottom: 0.55rem; transition: 0.3s; }
+        .footer-col a:hover { color: #c4a8e8; }
+        .footer-bottom { border-top: 1px solid #2a1550; padding-top: 2rem; text-align: center; max-width: 1200px; margin: 0 auto; }
+        .footer-bottom p { font-size: 0.68rem; color: #333; }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -125,198 +117,150 @@
         .stagger.active > *:nth-child(1) { opacity:1;transform:translateY(0);transition-delay:0s; }
         .stagger.active > *:nth-child(2) { opacity:1;transform:translateY(0);transition-delay:0.15s; }
         .stagger.active > *:nth-child(3) { opacity:1;transform:translateY(0);transition-delay:0.3s; }
-        .stagger.active > *:nth-child(4) { opacity:1;transform:translateY(0);transition-delay:0.45s; }
-        .stagger.active > *:nth-child(5) { opacity:1;transform:translateY(0);transition-delay:0.6s; }
-        .stagger.active > *:nth-child(6) { opacity:1;transform:translateY(0);transition-delay:0.75s; }
 
-        @media (max-width: 768px) {
-            nav ul { display: none; }
-            .hero { flex-direction: column; }
-            .hero-left { min-height: auto; padding: 5rem 5% 3rem; }
-            .hero-right { padding: 3rem 5%; }
+        @media(max-width:768px) {
+            .nav-links { display: none; }
+            .hero-content { flex-direction: column; padding: 6rem 1.5rem 3rem; }
+            .hero-right { order: -1; }
+            .hero-right img { width: 100%; height: 240px; }
+            .hero-right .floating { left: 0; }
             .hero h1 { font-size: 2.2rem; }
-            .intro { flex-direction: column; }
             .program-grid { grid-template-columns: 1fr; }
-            .story { flex-direction: column; padding: 4rem 5%; }
+            .about-section { flex-direction: column; gap: 2rem; }
+            .about-left img { height: 240px; }
             .testi-grid { grid-template-columns: 1fr; }
-            .process-grid { grid-template-columns: 1fr 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
-    <nav id="navbar">
-        <div class="logo">Neha Sharma</div>
-        <ul>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#story">My Story</a></li>
-            <li><a href="#reviews">Results</a></li>
-            <li><a href="#process">How It Works</a></li>
-        </ul>
-        <a href="#programs" class="cta-btn">Work With Me</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="logo">Neha <span>Sharma</span></a>
+            <ul class="nav-links">
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/919811772233" class="nav-cta">Book Free Call</a>
+        </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-left">
-            <div class="bg-pattern"></div>
-            <div class="content">
-                <div class="avatar"><i class="fas fa-user"></i></div>
-                <h2>Neha Sharma</h2>
-                <p>ICF Certified Career & Life Coach. 9 years. 600+ clients transformed.</p>
-                <div class="certs">
-                    <div class="cert">✦ ICF PCC Certified</div>
-                    <div class="cert">✦ Marshall Goldsmith Stakeholder Centered Coaching</div>
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">💜 CAREER & LIFE COACH · DELHI · SINCE 2018</div>
+                <h1>Stop Drifting. Start Making Decisions You Actually <em>Follow</em></h1>
+                <p>I'm Neha Sharma. I was a product manager at a fintech company in Gurugram for 7 years. I was good at it — got promoted twice, managed a team of 9, made decent money. I was also deeply unhappy and couldn't figure out why. I wasn't living my own life — I was managing a version of my life that looked good on paper but felt wrong in my body every morning. I left in 2017 with no plan. Did a certified coaching program through the International Coaching Federation. Started coaching in 2018. I've worked with 340+ clients since then — most of them are people like I was: successful on the outside, unsure on the inside.</p>
+                <div class="hero-btns">
+                    <a href="#programs" class="btn-purple">See My Programs</a>
+                    <a href="#about" class="btn-outline">How I Work</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Neha Sharma, career and life coach in Delhi">
+                <div class="floating">
+                    <div class="rating">4.9 ★ Google</div>
+                    <span>63 verified reviews</span>
                 </div>
             </div>
         </div>
-        <div class="hero-right">
-            <div class="hero-tag">Career & Life Coach · Delhi</div>
-            <h1>Stop Drifting. Start<br>Making Decisions<br>You Actually <em>Follow</em></h1>
-            <p>Most people don't need more motivation. They need to stop being stuck in a loop — going between the same two options, asking the same people for advice, and ending up in the same place. I've seen it hundreds of times. My job is to create enough clarity that you can make one real decision and commit to it fully.</p>
-            <div class="hero-btns">
-                <a href="#programs" class="btn-plum">See My Programs</a>
-                <a href="#story" class="btn-ghost">My Background</a>
-            </div>
-        </div>
     </section>
 
-    <div class="marquee">
-        <div class="marquee-content">
-            <span>6-Week Career Clarity Program</span>
-            <span>3-Month Executive Coaching</span>
-            <span>1:1 Private Sessions</span>
-            <span>Group Workshops — Twice a Year</span>
-            <span>ICF PCC Certified · 600+ Clients Transformed</span>
-            <span>6-Week Career Clarity Program</span>
-            <span>3-Month Executive Coaching</span>
-            <span>1:1 Private Sessions</span>
-            <span>Group Workshops — Twice a Year</span>
-            <span>ICF PCC Certified · 600+ Clients Transformed</span>
-        </div>
+    <div class="strip">
+        <div class="strip-item">✓ ICF Certified Coach (PCC)</div>
+        <div class="strip-item">✓ 340+ Clients Coached</div>
+        <div class="strip-item">✓ Free 20-min Discovery Call</div>
+        <div class="strip-item">✓ Online & In-Person Sessions</div>
     </div>
 
-    <section class="intro" id="intro">
-        <div class="intro-text reveal">
-            <div class="tag">The Core Issue</div>
-            <h2>I've Never Met Someone Who "Can't Figure It Out"</h2>
-            <p>In 9 years and over 600 clients, I've never met someone who genuinely can't figure out what they want. Everyone knows — somewhere deep down — when a job is killing them, when a relationship has run its course, when they're playing it safe and calling it contentment.</p>
-            <p>What they can't do is make the decision and stop second-guessing it. That's what I help with. Not finding direction — most people already have it. Committing to one path and seeing it through.</p>
-        </div>
-        <div class="intro-right stagger">
-            <div class="stat-row">
-                <div class="stat-item"><div class="num">600+</div><div class="label">Clients Coached</div></div>
-                <div class="stat-item"><div class="num">9</div><div class="label">Years Experience</div></div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-item"><div class="num">89%</div><div class="label">Achieve Primary Goal</div></div>
-                <div class="stat-item"><div class="num">4.9</div><div class="label">Google Rating</div></div>
-            </div>
-        </div>
-    </section>
-
     <section class="programs" id="programs">
-        <div class="section-header reveal">
-            <div class="section-label">Programs</div>
-            <h2 class="section-title">How I Work</h2>
-            <p class="section-sub">Three formats, chosen based on where you are and what you need</p>
+        <div class="header reveal">
+            <div class="label">How I Work</div>
+            <h2>Three Programs, Based on Where You Are</h2>
+            <p class="sub">Every engagement starts with a free 20-minute call. We'll figure out which program fits — sometimes none do and I'll tell you that.</p>
         </div>
         <div class="program-grid stagger">
             <div class="program-card">
-                <div class="number">01</div>
-                <h3>Career Clarity Sprint</h3>
-                <p>6 weeks. For people stuck between staying in a job they hate and jumping to something they haven't figured out yet. We do deep work on values, skills, and the gap between what you're doing and what drains you. At the end, you'll have a clear 12-month career roadmap — not a generic "follow your passion" plan, but a specific, realistic sequence of steps.</p>
-                <div class="detail"><i class="fas fa-calendar"></i> 6 Weeks · 6 Sessions</div>
-                <div class="detail" style="margin-top:0.5rem;"><i class="fas fa-inr"></i> ₹22,000 (EMI available)</div>
+                <div class="duration">6 Weeks</div>
+                <h3>Career Reset</h3>
+                <p>For people who are stuck in a career that doesn't feel right, don't know what they want instead, and need a structured way to figure it out. Not about 'finding your passion' — about making a real decision and building a plan to execute it.</p>
+                <div class="includes"><strong>What's included:</strong><br>6 weekly 60-min sessions, action plans after each session, WhatsApp support between sessions</div>
+                <div class="price">₹24,000<small> for 6 weeks</small></div>
             </div>
             <div class="program-card">
-                <div class="number">02</div>
+                <div class="duration">12 Weeks</div>
+                <h3>Life Rebuild</h3>
+                <p>For people going through a transition — career change, breakup, relocation, parenthood — who feel unmoored and need consistent support over a longer period. We work on the immediate transition and the underlying patterns that got you here.</p>
+                <div class="includes"><strong>What's included:</strong><br>12 weekly 60-min sessions, unlimited WhatsApp support, 2 emergency 30-min calls per month</div>
+                <div class="price">₹42,000<small> for 12 weeks</small></div>
+            </div>
+            <div class="program-card">
+                <div class="duration">3 Months</div>
                 <h3>Executive Coaching</h3>
-                <p>12 weeks. For mid/senior professionals who are performing well externally but feel like something's missing. Usually this isn't a career problem — it's an identity one. You're successful by everyone else's metric but you haven't defined your own. We work through leadership identity, personal values under pressure, and long-term life design. This one's intensive — weekly sessions, WhatsApp support between calls.</p>
-                <div class="detail"><i class="fas fa-calendar"></i> 12 Weeks · 12 Sessions</div>
-                <div class="detail" style="margin-top:0.5rem;"><i class="fas fa-inr"></i> ₹55,000</div>
+                <p>For senior professionals who are effective at work but want to be more intentional — about leadership, about boundaries, about what comes next. Often done alongside a demanding job. More measured, less emotional processing.</p>
+                <div class="includes"><strong>What's included:</strong><br>8 sessions over 3 months (bi-weekly 75-min sessions), 360-degree assessment, optional 360 follow-up</div>
+                <div class="price">₹65,000<small> for 3 months</small></div>
             </div>
-            <div class="program-card">
-                <div class="number">03</div>
-                <h3>1:1 Private Sessions</h3>
-                <p>Single 75-minute sessions, booked as needed. For people who want high-quality guidance without committing to a full program. You bring whatever's urgent — a specific decision, a conversation you need to have, a career move you're considering. I give you structured thinking tools and honest feedback. Sessions run ₹4,500 each, and most clients who start with single sessions end up enrolling in a program within 2-3 months.</p>
-                <div class="detail"><i class="fas fa-clock"></i> 75 Minutes Per Session</div>
-                <div class="detail" style="margin-top:0.5rem;"><i class="fas fa-inr"></i> ₹4,500 / session</div>
+        </div>
+        <p style="text-align:center;margin-top:2rem;font-size:0.82rem;color:#999;" class="reveal">All programs include a free 20-minute discovery call before you commit. No packages without conversation first.</p>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-left reveal">
+            <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&q=80" alt="Coaching session">
+        </div>
+        <div class="about-right reveal">
+            <div class="label">About Me</div>
+            <h2>What Happened Before<br>I Became a Coach</h2>
+            <p>I've lived the story I help people with. I was a product manager at a fintech company in Gurugram for 7 years. I was good at it. Promoted twice, team of 9, decent package. I was also having panic attacks before every 9 AM standup. Not because I was bad at the job — because I didn't know why I was doing it. I'd gotten so far away from any internal compass that I couldn't tell the difference between a good opportunity and just another thing that looked like it would make me successful in other people's eyes.</p>
+            <p>I left in January 2017. Spent six months doing very little — reading, walking, talking to people who were doing work they actually cared about. Did a certified coaching program through the International Coaching Federation in 2018. Started taking clients that same year. I've now coached 340+ people across careers, relationships, purpose, and major life transitions.</p>
+            <div class="quote">
+                <p>"I don't believe everyone needs to quit their job and find their passion. I believe most people need to make a decision, any decision, and commit to it fully instead of half-living seventeen options at once."</p>
+            </div>
+            <p>Certifications: ICF Professional Certified Coach (PCC), psychometric testing (粉尘 Hogan Assessment), 200-hour yoga teacher training (which informs how I think about body awareness and decision-making)</p>
+        </div>
+    </section>
+
+    <div class="video-section reveal">
+        <div class="label">How I Work</div>
+        <h2>A Session With Me</h2>
+        <iframe src="https://www.youtube.com/embed/8Z_vVc1GW-0" allowfullscreen></iframe>
+    </div>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testi-bg"></div>
+        <div class="content">
+            <div class="label">Reviews</div>
+            <h2>What Clients Say After 3 Months</h2>
+            <div class="testi-grid stagger">
+                <div class="testi-card">
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"I came to Neha at the lowest point in my career. I'd been at a Big 4 firm for 5 years, hated it but couldn't see a way out, and spent every Sunday night in a state of dread. Within 6 weeks of Career Reset I had a clear plan — not a vague idea, a real plan with timelines and milestones. I'm now 4 months into a product role at a startup that actually aligns with what I care about. The work Neha does is not cheerleading or advice-giving. She asks questions that expose the gap between what you say you want and what you're actually doing. That gap is where all the work happens. I can't recommend her enough."</p>
+                    <h4>Arjun Mehta</h4>
+                    <span>Product Manager, Series B Startup, Gurugram · Career Reset Client</span>
+                </div>
+                <div class="testi-card">
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"I was skeptical about coaching. I'd done therapy before and found it useful but different — therapy is about understanding the past, coaching is about deciding on the future. Neha helped me see that my real problem wasn't indecision, it was fear of choosing wrong. Once I could name that, the decision itself became clearer. I chose to stay in my marriage and rebuild it deliberately, not just let it continue by default. I've been doing her Life Rebuild program for 3 months and the change in how I relate to my own choices is significant. I feel like I'm living my own life for the first time in years."</p>
+                    <h4>Priya Sundaram</h4>
+                    <span>Architect, Saket, Delhi · Life Rebuild Client</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="story" id="story">
-        <div class="story-right reveal">
-            <div class="tag">My Background</div>
-            <h2>Why I Do This Work</h2>
-            <p>I spent 6 years in product management at a large consumer tech company. I was good at it — got promoted to Senior PM by 28, managed a team of 8. On paper, things were working. Except I was sleeping 5 hours a night, hadn't taken a real vacation in 3 years, and my relationship with my family was deteriorating because I'd become someone who only knew how to talk about work metrics.</p>
-            <p>The breaking point came when I couldn't remember the last time I'd done something that wasn't in service of a deliverable. Not a single afternoon that just felt like mine. That sounds small when I write it — but it was the first time I realized that if I didn't change something, I'd end up exactly where I said I didn't want to be: successful, miserable, and unable to figure out why.</p>
-            <div class="quote">"I didn't leave because I hated the corporate world. I left because I realized I had been making decisions based on what would look good, not what would feel right. That's the exact thing I help people fix now."</div>
-            <p>I did a coach training program in 2015, not because I wanted to become a coach, but because I needed to figure out my own thinking. Three months in, I realized this was the work I wanted to do permanently. I've been doing it ever since — first part-time, full-time since 2017.</p>
-        </div>
-        <div class="story-left reveal">
-            <div class="quote-img"><i class="fas fa-quote-left"></i></div>
-        </div>
-    </section>
-
-    <section class="testimonials" id="reviews">
-        <div class="section-header reveal">
-            <div class="section-label">Results</div>
-            <h2 class="section-title">What Clients Actually Say</h2>
-            <p class="section-sub">No fabricated testimonials — these are from real clients with their permission</p>
-        </div>
-        <div class="testi-grid stagger">
-            <div class="testi-card">
-                <div class="quote"><i class="fas fa-quote-left"></i></div>
-                <p>"I'd been in the same IT role for 7 years. Same company. Same salary. Same feeling every Sunday night. Neha didn't tell me to quit — she made me actually examine why I kept not quitting. It turned out I was afraid of making the wrong choice. She helped me separate the fear of failure from genuine uncertainty. Six months after working with her, I took a 40% pay cut to join a startup. Best decision I've made in a decade."</p>
-                <h4>Rahul Mehrotra</h4>
-                <span>Product Manager → Startup Co-Founder, Bangalore · 3-Month Program</span>
-            </div>
-            <div class="testi-card">
-                <div class="quote"><i class="fas fa-quote-left"></i></div>
-                <p>"I'd done three sessions with other coaches before Neha. They were supportive. She was useful. The difference is that she doesn't just validate what you're feeling — she challenges the assumptions underneath it. I went in thinking I had a career problem. We figured out it was actually a boundary problem at home that was making everything at work feel worse. Changed my entire approach."</p>
-                <h4>Priya Venkatesh</h4>
-                <span>Senior Consultant, Gurgaon · Career Clarity Sprint</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="process" id="process">
-        <div class="section-header reveal">
-            <div class="section-label">How It Works</div>
-            <h2 class="section-title">Simple Process, Real Structure</h2>
-            <p class="section-sub">No ambiguity about what you're signing up for</p>
-        </div>
-        <div class="process-grid stagger">
-            <div class="process-step">
-                <div class="step-num">1</div>
-                <h3>Free Discovery Call</h3>
-                <p>20 minutes. We figure out if we're a good fit. I ask you hard questions. You decide if this feels right. No sales pitch.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-num">2</div>
-                <h3>Assessment & Intake</h3>
-                <p>Structured questionnaires and a 90-minute deep-dive session. We map your values, patterns, and the specific gap between where you are and where you want to be.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-num">3</div>
-                <h3>Active Coaching Phase</h3>
-                <p>Weekly or bi-weekly sessions, depending on the program. WhatsApp support between calls. I hold you accountable to commitments you make — not to arbitrary ones I assign.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-num">4</div>
-                <h3>Closure & Reflection</h3>
-                <p>We end programs with a formal review. You're clear on what changed, what's different, and what your next steps are. Most clients stay in touch for occasional check-ins after.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
+    <section class="contact-section" id="contact">
         <div class="reveal">
-            <h2>Ready to Stop Going in Circles?</h2>
-            <p>Book a free 20-minute discovery call. No commitment, no pitch. We talk about where you are, where you want to be, and whether coaching is actually the right next step for you.</p>
-            <a href="mailto:neha@nehasharma.coach" class="cta-btn">Book Free Discovery Call</a>
-            <p style="margin-top:1.5rem;font-size:0.82rem;color:#999;">Response within 24 hours · neha@nehasharma.coach</p>
+            <div class="label">Start Here</div>
+            <h2>Book a Free Discovery Call</h2>
+            <p>20 minutes. No pitch, no hard sell. We'll figure out if coaching is the right tool for what you're dealing with.</p>
+        </div>
+        <div class="contact-buttons reveal">
+            <a href="https://wa.me/919811772233?text=Hi%20Neha%2C%20I%27d%20like%20to%20book%20a%20free%20discovery%20call" class="contact-btn primary"><i class="fab fa-whatsapp"></i> WhatsApp +91 98117 72233</a>
+            <a href="mailto:neha@nehasharmacoach.in" class="contact-btn secondary">📧 neha@nehasharmacoach.in</a>
         </div>
     </section>
 
@@ -324,35 +268,35 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="logo">Neha Sharma</div>
-                <p>ICF PCC Certified Career & Life Coach. 9 years. Vasant Kunj, Delhi. Working with professionals across India.</p>
-                <div class="social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <p>ICF Certified Career & Life Coach (PCC). Based in Vasant Kunj, Delhi. Working with clients across India and the diaspora. Online sessions available worldwide.</p>
             </div>
             <div class="footer-col">
                 <h4>Programs</h4>
-                <a href="#programs">Career Clarity Sprint</a>
-                <a href="#programs">Executive Coaching</a>
-                <a href="#programs">1:1 Private Sessions</a>
+                <a href="#programs">Career Reset — ₹24,000</a>
+                <a href="#programs">Life Rebuild — ₹42,000</a>
+                <a href="#programs">Executive Coaching — ₹65,000</a>
+                <a href="#programs">Free Discovery Call</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick</h4>
+                <a href="#about">About Neha</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#contact">Book a Call</a>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <a href="mailto:neha@nehasharma.coach">neha@nehasharma.coach</a>
-                <a href="#">+91 98765 43210</a>
+                <a href="tel:+919811772233">+91 98117 72233</a>
+                <a href="mailto:neha@nehasharmacoach.in">neha@nehasharmacoach.in</a>
                 <a href="#">Vasant Kunj, Delhi</a>
-                <a href="#">LinkedIn Profile</a>
+                <a href="https://instagram.com/nehasharmacoach">Instagram</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Neha Sharma Coaching. All rights reserved.</p>
+            <p>© 2026 Neha Sharma Coaching, Vasant Kunj, Delhi.</p>
         </div>
     </footer>
 
     <script>
-        window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-        });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
         }, { threshold: 0.1 });
@@ -360,7 +304,7 @@
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => { e.preventDefault();
                 const t = document.querySelector(a.getAttribute('href'));
-                if (t) t.scrollIntoView({ behavior: 'smooth' });
+                if(t) t.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
